@@ -6,9 +6,9 @@ pipeline {
 				echo "Compiled successfully";
 			}
 		}
-		stage ('Java') {
+		stage ('JUnit') {
 			steps {
-				echo "Java passed successfully";
+				echo "JUnit passed successfully";
 			}
 		}
 		stage ('Quality-Gate') {
@@ -37,6 +37,7 @@ pipeline {
 		}
 		changed {
 			echo "This will run if state of pipeline is changed";
+			echo 'For example, if the pipeline was previously failing but is now successful'
 		}
 	}
 }
